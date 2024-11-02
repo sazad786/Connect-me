@@ -1,0 +1,158 @@
+header{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.close {
+    width: 10%;
+    height: 35px;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 0px;
+    margin-left: 96%;
+}
+
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+    background-size:cover;
+}
+
+form{
+    max-width: 300px;
+    /* width: 100%; */
+    max-height: 500px;
+    background: transparent;
+    padding: 0px 25px 25px;
+    border-radius: 20px 0px 20px 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    color: #2DFF19;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    border: 3px solid #2DFF19;
+    
+}
+
+form h2 {
+    font-size: 30px;
+    
+    text-align: center;
+    
+}
+.input-box .icon{
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  color:   white;
+  line-height: 57px; 
+  
+}
+
+
+
+
+
+form .input-box {
+    margin-top: 10px;
+}
+
+.input-box .field {
+    width: 90%;
+    height: 10px;
+    background: transparent;
+    border: 2px solid #2DFF19;
+    outline: none;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 16px;
+    color: #2DFF19;
+    margin-top: 8px;
+}
+
+.input-box .field.mess {
+    height: 100px;
+    resize: none;
+}
+
+form button {
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border: none;
+    border-radius: 8px 0px 8px 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 25px;
+    transition: .5s;
+    border: 2px solid #2DFF19;
+}
+
+form button:hover {
+    background: #2DFF19;
+}
+
+
+/* ******************************************* */
+  
+  /* Responsive Styling for Android and Mobile Devices */
+  @media (max-width: 768px) {
+    .contact {
+      padding: 15px;
+    }
+  
+    .field {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    button[type="submit"] {
+      font-size: 16px;
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact {
+      padding: 10px;  /*10px*/
+    }
+  
+    .input-box label {
+       font-size: 14px; /* 14px */
+    }
+  
+    .field {
+      font-size: 14px;   /*14px*/
+    }
+  
+    button[type="submit"] {
+      font-size: 14px;   /*14px*/
+    }
+  }
+
+  @media (max-width: 320px) {
+    .contact {
+      padding: 8px;  /*10px*/
+    }
+  
+    .input-box label {
+       font-size: 12px; /* 14px */
+    }
+  
+    .field {
+      font-size: 12px;   /*14px*/
+    }
+  
+    button[type="submit"] {
+      font-size: 12px;   /*14px*/
+    }
+  }
+  
