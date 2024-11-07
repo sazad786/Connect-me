@@ -32,10 +32,10 @@ form{
     padding: 0px 25px 25px;
     border-radius: 20px 0px 20px 0px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    color: #2DFF19;
+    color: red;
     margin-bottom: 20px;
     margin-top: 0px;
-    border: 3px solid #2DFF19;
+    border: 3px solid red;
     
 }
 
@@ -66,12 +66,12 @@ form .input-box {
     width: 90%;
     height: 10px;
     background: transparent;
-    border: 2px solid #2DFF19;
+    border: 2px solid red;
     outline: none;
     border-radius: 6px;
     padding: 15px;
     font-size: 16px;
-    color: #2DFF19;
+    color: red;
     margin-top: 8px;
 }
 
@@ -93,11 +93,11 @@ form button {
     font-weight: 500;
     margin-top: 25px;
     transition: .5s;
-    border: 2px solid #2DFF19;
+    border: 2px solid red;
 }
 
 form button:hover {
-    background: #2DFF19;
+    background: red;
 }
 
 
