@@ -49,6 +49,17 @@ const Contact = () => {
              
             </div>
             <div className="input-box">
+              <label>Designation</label>
+              <select className="country">
+                <option>Sales Executive</option>
+                <option>Billing Executive</option>
+                <option>India</option>
+                <option>USA</option>
+                <option>Chaina</option>
+              </select>
+            </div>
+
+            <div className="input-box">
                 <label>Email</label>
                 <input type="email" className="field" placeholder='Enter your email' name='email' required />
             </div>
