@@ -1,3 +1,4 @@
+
 header{
     display: flex;
     width: 100%;
@@ -20,14 +21,13 @@ header{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    height: fit-content;
     background: black;
     background-size:cover;
 }
 
 form{
     max-width: 300px;
-    /* width: 100%; */
-    max-height: 700px;
     background: transparent;
     padding: 0px 25px 25px;
     border-radius: 20px 0px 20px 0px;
@@ -116,7 +116,40 @@ form button:hover {
     background: red;
 }
 
+/* Loader Wrapper */
+.fullscreen-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(43, 42, 42, 0.8); */
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+/* Loader Animation */
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  animation: spin 1s linear infinite;
+}
+
+/* Spin Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /* ******************************************* */
   
   /* Responsive Styling for Android and Mobile Devices */

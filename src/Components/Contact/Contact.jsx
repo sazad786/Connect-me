@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Contact.css";
 import Swal from "sweetalert2";
 import emailjs from "@emailjs/browser";
@@ -6,9 +6,12 @@ const Contact = () => {
   const [form, setForm] = useState({
     from_name: "",
     from_email: "",
-    department: "",
+    department: "Sales Executive",
     no_of_leaves: "",
     message: "",
+    from_date: "",
+    to_date: "",
+    branch: "Main Road",
   });
   const [isLoading, setIsLoading] = useState(false);
   const sendEmail = (e) => {
@@ -24,6 +27,9 @@ const Contact = () => {
       message: form.message,
       department: form.department,
       no_of_leaves: form.no_of_leaves,
+      from_date: form.from_date,
+      to_date: form.to_date,
+      branch: form.branch,
     };
 
     emailjs
@@ -55,19 +61,31 @@ const Contact = () => {
         setForm({
           from_name: "",
           from_email: "",
-          department: "",
+          department: "Sales Executive",
           no_of_leaves: "",
           message: "",
+          from_date: "",
+          to_date: "",
+          branch: "Main Road",
         });
       });
   };
+  useEffect(() => {
+    console.log(form, "dsjhdhjds");
+  }, [form]);
   return (
     <div>
+      {isLoading && (
+        <div class="fullscreen-loader">
+          <div class="loader"></div>
+        </div>
+      )}
+
       <section className="contact">
         <form onSubmit={sendEmail}>
           {/* <button className='close'><i class='bx bx-x'></i></button> */}
 
-          <h2>Contact Travis</h2>
+          <h2>Horizon</h2>
           <div className="input-box">
             <label>Full Name</label>
             <input
@@ -88,6 +106,26 @@ const Contact = () => {
             />
           </div>
           <div className="input-box">
+            <label>Branch</label>
+            <select
+              className="country"
+              onChange={(e) =>
+                setForm((prev) => {
+                  return {
+                    ...prev,
+                    [e.target.name]: e.target.value,
+                  };
+                })
+              }
+              value={form.branch}
+              name="branch"
+            >
+              <option selected>Main Road</option>
+              <option>Kokar Showroom</option>
+              <option>Tupudan Showroom</option>
+            </select>
+          </div>
+          <div className="input-box">
             <label>Designation</label>
             <select
               className="country"
@@ -102,11 +140,23 @@ const Contact = () => {
               value={form.department}
               name="department"
             >
-              <option>Sales Executive</option>
+              <option selected>Sales Executive</option>
               <option>Billing Executive</option>
-              <option>India</option>
-              <option>USA</option>
-              <option>Chaina</option>
+              <option>Accessories Executive</option>
+              <option>CRE</option>
+              <option>Receptionist</option>
+              <option>PDI Incharge</option>
+              <option>PDI Executive</option>
+              <option>Marketing Executive</option>
+              <option>Finance Executive</option>
+              <option>Sales Manager</option>
+              <option>CRM</option>
+              <option>RM (Relationship Manager)</option>
+              <option>Cashier</option>
+              <option>Rider</option>
+              <option>Housekeeping</option>
+              <option>Office assistant</option>
+              <option>Software Developers</option>
             </select>
           </div>
 
@@ -130,7 +180,7 @@ const Contact = () => {
             />
           </div>
           <div className="input-box">
-            <label>No. of Leaves Required</label>
+            <label>No. of Leaves Day</label>
             <input
               type="number"
               className="field"
@@ -149,10 +199,48 @@ const Contact = () => {
             />
           </div>
           <div className="input-box">
-            <label>Your Message</label>
+            <label>From Date</label>
+            <input
+              type="date"
+              className="field"
+              name="from_date"
+              required
+              value={form.from_date}
+              onChange={(e) =>
+                setForm((prev) => {
+                  return {
+                    ...prev,
+                    [e.target.name]: e.target.value,
+                  };
+                })
+              }
+            />
+          </div>
+          <div className="input-box">
+            <label>To Date</label>
+            <input
+              name="to_date"
+              className="field"
+              type="date"
+              placeholder="Enter your To Date"
+              required
+              value={form.to_date}
+              onChange={(e) =>
+                setForm((prev) => {
+                  return {
+                    ...prev,
+                    [e.target.name]: e.target.value,
+                  };
+                })
+              }
+            />
+          </div>
+          <div className="input-box">
+            <label>Message</label>
             <textarea
               name="message"
               className="field mess"
+              type="text"
               placeholder="Enter your message"
               required
               value={form.message}
@@ -164,9 +252,11 @@ const Contact = () => {
                   };
                 })
               }
-            ></textarea>
+            />
           </div>
-          <button type="submit">Send Message</button>
+          <button type="submit" disabled={isLoading}>
+            Send Message
+          </button>
         </form>
       </section>
     </div>
