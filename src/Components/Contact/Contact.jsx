@@ -85,7 +85,21 @@ const Contact = () => {
         <form onSubmit={sendEmail}>
           {/* <button className='close'><i class='bx bx-x'></i></button> */}
 
-          <h2>Horizon</h2>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
+            }}
+          >
+            <h2 style={{ marginTop: "7px", textTransform: "uppercase" }}>
+              Horizon
+            </h2>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Honda_Logo.svg"
+              style={{ width: "40px", height: "40px", marginLeft: "10px" }}
+            />
+          </div>
           <div className="input-box">
             <label>Full Name</label>
             <input
