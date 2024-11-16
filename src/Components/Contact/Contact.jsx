@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Contact.css";
 import Swal from "sweetalert2";
 import emailjs from "@emailjs/browser";
+import CompanyProle from "../../../CompanyPofile.pdf";
+import LeavePolicyHorizonHonda from "../../../LeavePolicyHorizonHonda.pdf";
 const Contact = () => {
   const [form, setForm] = useState({
     from_name: "",
@@ -12,6 +14,7 @@ const Contact = () => {
     from_date: "",
     to_date: "",
     branch: "Main Road",
+    leave_type: "Paid Leave",
   });
   const [isLoading, setIsLoading] = useState(false);
   const sendEmail = (e) => {
@@ -30,6 +33,7 @@ const Contact = () => {
       from_date: form.from_date,
       to_date: form.to_date,
       branch: form.branch,
+      leave_type: form.leave_type,
     };
 
     emailjs
@@ -67,6 +71,7 @@ const Contact = () => {
           from_date: "",
           to_date: "",
           branch: "Main Road",
+          leave_type: "Paid Leave",
         });
       });
   };
@@ -194,6 +199,25 @@ const Contact = () => {
             />
           </div>
           <div className="input-box">
+            <label>Leave Type</label>
+            <select
+              className="country"
+              onChange={(e) =>
+                setForm((prev) => {
+                  return {
+                    ...prev,
+                    [e.target.name]: e.target.value,
+                  };
+                })
+              }
+              value={form.leave_type}
+              name="leave_type"
+            >
+              <option selected>Paid Leave</option>
+              <option>Sick Leave</option>
+            </select>
+          </div>
+          <div className="input-box">
             <label>No. of Leaves Day</label>
             <input
               type="number"
@@ -271,6 +295,20 @@ const Contact = () => {
           <button type="submit" disabled={isLoading}>
             Send Message
           </button>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginTop: "20px",
+            }}
+          >
+            <a href={CompanyProle} target="_blank">
+              Comapny Profile
+            </a>
+            <a href={LeavePolicyHorizonHonda} target="_blank">
+              Leave Policy
+            </a>
+          </div>
         </form>
       </section>
     </div>

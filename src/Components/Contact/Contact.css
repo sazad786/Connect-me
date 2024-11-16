@@ -66,12 +66,12 @@ form .input-box {
     width: 90%;
     height: 10px;
     background: transparent;
-    border: 2px solid red;
+    border: 2px solid #ff0000;
     outline: none;
     border-radius: 6px;
     padding: 15px;
     font-size: 16px;
-    color: red;
+    color: #ff0000;
     margin-top: 8px;
 }
 
@@ -79,13 +79,13 @@ form .input-box {
   width: 100%;
   height: 40px;
   background: black;
-  border: 2px solid #ff4821;
+  border: 2px solid #ff0000;
   outline: none;
   border-radius: 6px;
   font-size: 16px;
   padding: 10px;
   font-size: 16px;
-  color: #ff4821;
+  color: #ff0000;
  margin-top: 8px;
     
  
@@ -110,6 +110,7 @@ form button {
     margin-top: 25px;
     transition: .5s;
     border: 2px solid red;
+    color: #ff0000;
 }
 
 form button:hover {
@@ -205,3 +206,15 @@ form button:hover {
     }
   }
   
+a:hover{
+  color: white;
+}
+a{
+  color: #ff0000;
+}
+input::placeholder,select::placeholder,textarea::placeholder{
+  color: #ff0000;
+}
+section{
+  border: #ff0000;
+}
