@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import emailjs from "@emailjs/browser";
 import CompanyProle from "../../../CompanyPofile.pdf";
 import LeavePolicyHorizonHonda from "../../../LeavePolicyHorizonHonda.pdf";
+import Logo from "../../../Honda_Logo.svg";
 const Contact = () => {
   const [form, setForm] = useState({
     from_name: "",
@@ -101,7 +102,7 @@ const Contact = () => {
               Horizon
             </h2>
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Honda_Logo.svg"
+              src={Logo}
               style={{ width: "40px", height: "40px", marginLeft: "10px" }}
             />
           </div>
