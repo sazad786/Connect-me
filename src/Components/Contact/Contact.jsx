@@ -4,7 +4,6 @@ import Swal from "sweetalert2";
 import emailjs from "@emailjs/browser";
 import CompanyProle from "../../../CompanyPofile.pdf";
 import LeavePolicyHorizonHonda from "../../../LeavePolicyHorizonHonda.pdf";
-import Logo from "../../../Honda_Logo.svg";
 const Contact = () => {
   const [form, setForm] = useState({
     from_name: "",
@@ -90,22 +89,6 @@ const Contact = () => {
       <section className="contact">
         <form onSubmit={sendEmail}>
           {/* <button className='close'><i class='bx bx-x'></i></button> */}
-
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignContent: "center",
-            }}
-          >
-            <h2 style={{ marginTop: "7px", textTransform: "uppercase" }}>
-              Horizon
-            </h2>
-            <img
-              src={Logo}
-              style={{ width: "40px", height: "40px", marginLeft: "10px" }}
-            />
-          </div>
           <div className="input-box">
             <label>Full Name</label>
             <input
